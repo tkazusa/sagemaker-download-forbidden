@@ -2,7 +2,7 @@
 `jupyter_notebook_config.py` の `c.ContentsManager.files_handler_class` がファイルのハンドリングを制御しているため、
 `FilesHandler`を下記のように書き換えることで、ダウンロードに対して `403:Forbidden error` を返すようにできる。
 
-```
+```python
 from tornado import web
 from notebook.base.handlers import IPythonHandler
 
@@ -21,7 +21,7 @@ class ForbidFilesHandler(IPythonHandler):
 Amazon SageMaker は`/home/ec2-user/SageMaker` 以外の変更を保存しないので、`/home/ec2-user/.jupyter/handlers.py` への変更は ライフサイクル設定を使う必要がある。ノートブックを開始する際のスクリプトを下記とする。
 
 
-```
+```python
 # Creating ForbidFilesHandler class, overriding the default files_handler_class
 cat <<END >/home/ec2-user/.jupyter/handlers.py
 from tornado import web
