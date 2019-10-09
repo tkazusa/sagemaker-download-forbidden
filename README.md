@@ -54,6 +54,7 @@ END
 reboot
 ```
 さらに強固に行うのであれば、Amazon WorkSpaces か AppStream 2.0をご利用いただける。
+
 特にAppStream 2.0
 - Private EndpointからStreamingできるので、社内にPrivate DXが引かれているのであれば、ネットワークも閉域からのアクセスが可能になる
 - ユーザー認証は内部のUser Poolを使うか、数が多い場合はSAML連携が可能
